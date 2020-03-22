@@ -319,7 +319,7 @@ CREATE TEMPORARY SEQUENCE s1;
 CREATE SEQUENCE s2;
 CREATE TEMPORARY TABLE t1 (a int);
 CREATE TABLE t2 (a int);
---error ER_UNKNOWN_SEQUENCES
+--error ER_NOT_SEQUENCE
 DROP TEMPORARY SEQUENCE t1,t2,s1,s2;
 --error ER_UNKNOWN_SEQUENCES
 DROP TEMPORARY SEQUENCE s1;
@@ -447,7 +447,7 @@ drop table s;
 create temporary sequence s;
 drop temporary table s;
 create temporary table s (i int);
---error ER_UNKNOWN_SEQUENCES
+--error ER_NOT_SEQUENCE
 drop temporary sequence s;
 drop table s;
 
